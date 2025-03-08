@@ -1,0 +1,45 @@
+{
+  "ts-node": {
+    "require": [
+      "tsconfig-paths/register"
+    ]
+  },
+  "compilerOptions": {
+    "rootDir": "./",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ESNext",
+    "baseUrl": ".",
+    "allowJs": true,
+    "outDir": "dist",
+    "sourceMap": true,
+    "checkJs": false,
+    "alwaysStrict": true,
+    "diagnostics": true,
+    "importHelpers": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types", "./**/*"],
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "sourceRoot": "./"
+  },
+  "include": [
+    "index.ts",
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
