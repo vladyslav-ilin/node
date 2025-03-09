@@ -4,6 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.ts",
+    "migrate": "db-migrate --migrations-dir ./src/db/migrations",
+    "migrate:up": "npm run migrate up",
+    "migrate:down": "npm run migrate down",
+    "migrate:reset": "npm run migrate reset",
+    "migrate:create": "npm run migrate create",
     "lint": "eslint --quiet ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,13 +17,15 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "db-migrate": "^0.11.14",
+    "db-migrate-pg": "^1.5.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "nodemon": "^3.1.9",
-    "pg": "^8.13.1",
+    "pg": "^8.13.3",
     "reflect-metadata": "^0.2.2",
-    "typeorm": "^0.3.20",
+    "typeorm": "^0.3.21",
     "typescript": "^5.7.2"
   },
   "devDependencies": {

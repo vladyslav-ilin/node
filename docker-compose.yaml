@@ -1,0 +1,42 @@
+name: workshop
+
+services:
+  redis:
+    image: redis:7
+    ports:
+      - 6379:6379
+    networks:
+      - workshop-network
+
+  postgres:
+    image: postgres:16
+    restart: always
+    mem_limit: 1g
+    cpu_count: 1
+    mem_reservation: 512m
+    environment:
+      POSTGRES_USER: postgrestest
+      POSTGRES_PASSWORD: postgrestest
+      POSTGRES_DB: workshop
+    ports:
+      - 5432:5432
+    networks:
+      - workshop-network
+
+  mongo:
+    image: mongo:8
+    restart: always
+    mem_limit: 1g
+    cpu_count: 1
+    mem_reservation: 512m
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    ports:
+      - 27017:27017
+    networks:
+      - workshop-network
+
+networks:
+  workshop-network:
+    driver: bridge
